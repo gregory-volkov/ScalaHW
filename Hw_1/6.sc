@@ -1,5 +1,1 @@
-def AddAtTheEnd(InputList: List[Int], Element: Int): List[Int] = {
-  var TempList = List(Element)
-  InputList ::: TempList
-}
-
+ def AddAtTheEnd(InputList: List[Any], Element: Any): List[Any] = InputList ::: List(Element)
