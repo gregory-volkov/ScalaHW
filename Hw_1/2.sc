@@ -3,12 +3,15 @@ def CheckForBrackets(InputList: List[Char]): Int = {
   var Flag = 1
   var CurElement = 0
   val ListLength = InputList.length
-  while (CurElement <= ListLength) {
-    if (InputList.apply(CurElement) == '(') Flag+= 1 else Flag+= -1
+  while (CurElement <= ListLength - 1) {
+    if (InputList.apply(CurElement) == '(') Balance+= 1 else Balance+= -1
     if (Balance < 0) Flag = 0
     CurElement+= 1
   }
-  Flag
+  if (Balance != 0) {
+    0
+  } else {
+    Flag
+  }
 }
 
-CheckForBrackets(InputList)
