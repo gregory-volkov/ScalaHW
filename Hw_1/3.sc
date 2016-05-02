@@ -1,17 +1,11 @@
-def CountChange(Money: Int, Coins: List[Int]): Int = {
-  var NumOfWays = new Array[Int](Money + 1)
-  val CurMoney = 0;
-  val Coin = 0;
-  for (CurMoney <- 0 to Money) {
-    for (Coin<- Coins) {
-      if (CurMoney + Coin <= Money) NumOfWays(CurMoney + Coin)+= 1
-    }
-    }
-  for (Coin <- 0 to Money){
-    println(NumOfWays(Coin))
+def countChange(money: Int, coins: List[Int]): Int = {
+  if (coins.isEmpty){
+    0
+  } else if (money < 0){
+    0
+  } else if (money == 0){
+    1
+  } else {
+    countChange(money - coins.head, coins) + countChange(money, coins.tail)
   }
-
-  NumOfWays(Money)
 }
-
-CountChange(6, List(1,2,3))
