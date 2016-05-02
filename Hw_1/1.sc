@@ -1,5 +1,3 @@
-val InputList: List[Char] = List('(', '(', ')',')')
-
 def CheckForBrackets(InputList: List[Char]): Int = {
   var Balance = 0
   var Flag = 1
