@@ -1,1 +1,1 @@
- def AddAtTheEnd(InputList: List[Any], Element: Any): List[Any] = InputList ::: List(Element)
+def AddAtTheEnd[A](InputList: List[A], Element: A): List[A] = InputList ::: List(Element)
