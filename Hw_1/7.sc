@@ -1,6 +1,9 @@
 def ListLength[A](InputList: List[A]): Int = {
-  if (!InputList.isEmpty) 
-    ListLength(InputList.tail) + 1 
-  else 
-    0
+  def Iter[A](InputList: List[A], Acc: Int): Int = {
+    if (!InputList.isEmpty)
+      Iter(InputList.tail, Acc + 1)
+    else
+      Acc  
+  }
+  Iter(InputList, 0)
 }
