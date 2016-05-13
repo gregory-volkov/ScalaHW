@@ -1,12 +1,9 @@
 def ListReverse(InputList : List[Int]): List[Int] = {
-  var ResList: List[Int] = List()
-  val i = 0
-  def Iter(ResList: List[Int], NewElement: Int): List[Int] = {
-      val TempList = List(NewElement)
-      TempList ::: ResList
-    }
-  for (i <- 0 to InputList.length - 1) {
-    ResList = Iter(ResList, InputList.apply(i))
+  def Iter(InputList: List[Int], ResList: List[Int]): List[Int] = {
+    if (InputList.isEmpty)
+      ResList
+        else
+      Iter(InputList.tail, InputList.head :: ResList)
   }
-  ResList
+  Iter(InputList, List())
 }
