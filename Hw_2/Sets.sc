@@ -6,7 +6,7 @@ def singletonSet(elem: Int): Set = (x: Int) => (x == elem)
 def union(s: Set, t: Set): Set = (x: Int) => (contains(s, x) || contains(t, x))
 def intersect(s: Set, t: Set): Set = (elem: Int) => (contains(s, elem) && contains(t, elem))
 def diff(s: Set, t: Set): Set = (elem: Int) => (contains(s, elem) && (!contains(t,elem)))
-def filter(s: Set, p: Int => Boolean): Set = (intersect(s,p))
+def filter(s: Set, p: Int => Boolean): Set = (elem: Int) => (contains(s, elem) && p(elem))
 def toString(s: Set): String = {
   val xs = for (i <- -bound to bound if contains(s, i)) yield i
   xs.mkString("{", ",", "}")
