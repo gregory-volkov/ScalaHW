@@ -6,7 +6,6 @@
 
 #define ARRAY_SIZE 262144
 #define MAXLENG_STR 255
-#define COMMANDS 9
 #define COMMANDS_COUNT 1000
 
 typedef struct instructions
@@ -46,6 +45,8 @@ char str[MAXLENG_STR];
 char stInstr[MAXLENG_STR];
 char stArg[MAXLENG_STR];
 char *commands[COMMANDS] = {"ld", "st", "ldc", "add", "sub", "cmp", "jmp", "br", "ret"};
+const size_t COMMANDS_COUNT = sizeof(commands) / sizeof(commands[0]); 
+
 
 instruction instr[COMMANDS_COUNT];
 labels label[COMMANDS_COUNT];
