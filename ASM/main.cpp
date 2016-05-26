@@ -44,8 +44,8 @@ int stack[ARRAY_SIZE];
 char str[MAXLENG_STR];
 char stInstr[MAXLENG_STR];
 char stArg[MAXLENG_STR];
-char *commands[COMMANDS] = {"ld", "st", "ldc", "add", "sub", "cmp", "jmp", "br", "ret"};
-const size_t COMMANDS_COUNT = sizeof(commands) / sizeof(commands[0]); 
+char *commands[] = {"ld", "st", "ldc", "add", "sub", "cmp", "jmp", "br", "ret"};
+const size_t COMMANDS = sizeof(commands) / sizeof(commands[0]);
 
 
 instruction instr[COMMANDS_COUNT];
@@ -272,12 +272,12 @@ int main()
     if (!readFile("input.txt"))
     {
         fclose(stdin);
-        return;
+        return 0;
     }
     if (!command_realization("input.txt"))
     {
         fclose(stdin);
     }
     fclose(stdin);
-    return;
+    return 0;
 }
