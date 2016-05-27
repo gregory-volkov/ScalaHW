@@ -3,6 +3,7 @@ package GIFReader
 
 import java.util.{MissingResourceException, IllegalFormatException}
 import jdk.nashorn.internal.runtime.BitVector
+import scodec.bits._
 import scodec._
 import bits._
 import scodec.codecs._
