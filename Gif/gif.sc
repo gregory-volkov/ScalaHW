@@ -229,7 +229,7 @@ object TDraw extends SimpleSwingApplication {
         gif.header.width, gif.header.height, dscs.head))
     }
   }
-  val gif: gif_file = decoder("file.gif")
+  val gif: gif_file = decoder("anim.gif")
   val scale = 30
   val back = Array.fill(gif.header.width, gif.header.height)(color(gif.global_color_table(gif.header.background_color)))
   val frames = get_frames(gif.images, gif.image_descriptors, Nil).toArray
