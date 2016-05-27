@@ -1,16 +1,18 @@
 package GIFReader
 
+
 import java.util.{MissingResourceException, IllegalFormatException}
-import swing.{Panel, MainFrame, SimpleSwingApplication}
-import java.io._
+import jdk.nashorn.internal.runtime.BitVector
 import scodec._
-import java.nio.file.{Files, Paths}
-import scodec.bits.ByteOrdering.LittleEndian
-import java.awt.image.BufferedImage
-import scodec.codecs._
-import scala.NoSuchElementException
-import java.awt.{Color, Graphics2D, Dimension}
 import bits._
+import scodec.codecs._
+import java.nio.file.{Files, Paths}
+import java.io._
+import scodec.bits.ByteOrdering.LittleEndian
+import scala.NoSuchElementException
+import swing.{Panel, MainFrame, SimpleSwingApplication}
+import java.awt.{Color, Graphics2D, Dimension}
+import java.awt.image.BufferedImage
 
 class TDataPanel(data: Array[Array[Color]]) extends Panel {
   override def paintComponent(g: Graphics2D) {
