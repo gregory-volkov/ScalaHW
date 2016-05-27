@@ -42,7 +42,7 @@ object Timer {
     val timeOut = new javax.swing.AbstractAction() {
       def actionPerformed(e : java.awt.event.ActionEvent) = op
     }
-    val t = new javax.swing.Timer(interval, timeOut)
+    val t = new javax.swing.Timer(interval * 10, timeOut)
     t.setRepeats(repeats)
     t.start()
   }
